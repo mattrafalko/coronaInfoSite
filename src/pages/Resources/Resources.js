@@ -3,7 +3,7 @@ import Apple from '../../assets/appleCovid.jpeg';
 export default function Resources() {
   return (
     <React.Fragment>
-      <div class="jumbotron jumbotron-fluid">
+      <div class="jumbotron shadow-lg">
         <div class="container">
           <h1 class="display-4">COVID-19 Resources</h1>
           <p class="lead">Resources to help you through the pandemic.</p>
@@ -22,7 +22,7 @@ export default function Resources() {
           </a>
         </div>
       </div>
-      <div class="card mt-4 mb-2">
+      <div class="card mt-4 mb-2 shadow">
         <img
           src="https://www.pngkit.com/png/detail/939-9398948_apa-logo-american-psychological-association-american-psychology-association.png"
           class="card-img-top"
@@ -41,7 +41,7 @@ export default function Resources() {
           </a>
         </div>
       </div>
-      <div class="card mt-4 mb-2">
+      <div class="card mt-4 mb-2 shadow">
         <img
           src="https://media.graytvinc.com/images/810*455/Coronavirus+job+cuts.jpg"
           class="card-img-top"

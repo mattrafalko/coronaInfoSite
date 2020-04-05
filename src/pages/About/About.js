@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function About() {
   return (
-    <div class="jumbotron">
+    <div class="jumbotron shadow-lg">
       <h1 class="display-4">About this.</h1>
       <p class="lead">A simple to use resource center.</p>
       <hr class="my-4" />

@@ -6,7 +6,7 @@ export default function Error(props) {
 
   return (
     <div classNameNameName="container mx-auto" style={{ 'margin-top': '2em' }}>
-      <div className="card">
+      <div className="card shadow-lg">
         <img src={errorman} className="card-img-top" alt="error banner" />
         <div className="card-body">
           <h5 className="card-title font-weight-bold">

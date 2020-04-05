@@ -5,7 +5,7 @@ import YWCA from '../../assets/ywca.png';
 export default function HowToHelp() {
   return (
     <React.Fragment>
-      <div class="jumbotron">
+      <div class="jumbotron shadow-lg">
         <h1 class="display-4">How to Help</h1>
         <p class="lead">
           {' '}
@@ -16,7 +16,7 @@ export default function HowToHelp() {
 
       <h3 className="mt-4">Charities</h3>
 
-      <div class="card mt-4">
+      <div class="card mt-4 shadow">
         <img src={YWCA} class="card-img-top" alt="YWCA banner" />
         <div class="card-body">
           <h5 class="card-title">YWCA</h5>
@@ -40,7 +40,7 @@ export default function HowToHelp() {
 
       <h3 className="mt-4">Movements</h3>
 
-      <div class="card mt-4 mb-2">
+      <div class="card mt-4 mb-2 shadow">
         <img
           src="https://cms-assets.berniesanders.com/media/images/flag.width-600.jpg"
           class="card-img-top"
