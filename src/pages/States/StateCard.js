@@ -32,7 +32,7 @@ export default function StateCard(props) {
     <div className="card mt-4 shadow" id={`${state}`}>
       <div className="card-body">
         <h5 className="card-title">
-          <a href={stateLink ?? '#'} target="_blank">
+          <a href={stateLink ?? '#'} target="_blank" className="text-danger">
             {stateName ?? state}
           </a>
         </h5>
