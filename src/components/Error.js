@@ -13,15 +13,19 @@ export default function Error(props) {
             Error Status: {props.errorData.status}
           </h5>
           <p className="card-text">
-            Message:{' '}
+            <span className="font-weight-bold"> Message: </span>
             {props.errorData.data.message
               ? props.errorData.data.message
               : props.errorData.data}
           </p>
-          <span>Sorry about that!</span>
+          <p className="text-secondary">Sorry about that!</p>
+          <p className="text-secondary">
+            Take this time to practice some self-care.
+          </p>
+          <p className="text-secondary"> You can always check back later.</p>
         </div>
         <div className="card-body">
-          <a href="/" className="card-link">
+          <a href="/" className="btn btn-danger btn-lg">
             Home
           </a>
         </div>

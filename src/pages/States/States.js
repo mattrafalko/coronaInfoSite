@@ -8,7 +8,6 @@ export default function States() {
   const [stateData, setStateData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
   let numOrZero = (n) => (isNaN(n) ? 0 : n);
 
   useEffect(() => {
@@ -17,7 +16,6 @@ export default function States() {
       .get('https://covidtracking.com/api/states')
       .then((res) => {
         setStateData(res.data);
-
         setLoading(false);
       })
       .catch((e) => setError(e.response));

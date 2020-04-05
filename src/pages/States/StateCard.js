@@ -1,4 +1,5 @@
 import React from 'react';
+import stateNameAndLinks from '../../stateAndLinkmapper';
 
 export default function StateCard(props) {
   const {
@@ -11,6 +12,16 @@ export default function StateCard(props) {
     hospitalizedCumulative,
   } = props.state;
 
+  let currentState = stateNameAndLinks.filter(
+    (item) => item.state === state.toLowerCase()
+  );
+
+  let stateName, stateLink;
+  if (currentState.length) {
+    stateName = currentState[0].data.stateName;
+    stateLink = currentState[0].data.stateLink;
+  }
+
   let valueNowRecovered = Math.round((recovered / totalTestResults) * 100);
   valueNowRecovered = isNaN(valueNowRecovered) ? 0 : valueNowRecovered;
 
@@ -20,10 +31,14 @@ export default function StateCard(props) {
   return (
     <div className="card mt-4 shadow" id={`#${state}`}>
       <div className="card-body">
-        <h5 className="card-title">{state}</h5>
-        <div class="progress">
+        <h5 className="card-title">
+          <a href={stateLink ?? '#'} target="_blank">
+            {stateName ?? state}
+          </a>
+        </h5>
+        <div class="progress ">
           <div
-            className="progress-bar bg-success"
+            className="progress-bar bg-success "
             role="progressbar"
             style={{
               width: `${valueNowRecovered}%`,
@@ -58,21 +73,29 @@ export default function StateCard(props) {
 
         <ul className="list-group list-group-flush">
           <li className="list-group-item">
-            Total Confirmed: {totalTestResults}
+            <i class="fas fa-viruses text-warning"></i> Total Confirmed:{' '}
+            {totalTestResults}
           </li>
           <li className="list-group-item">
-            Total Recovered: {recovered ?? 'N/A'}
+            <i class="fas fa-virus-slash text-success"></i> Total Recovered:{' '}
+            {recovered ?? 'N/A'}
           </li>
 
-          <li className="list-group-item">Total Deaths: {death ?? 'N/A'}</li>
-          <li className="list-group-item">
-            Total Hospitalized: {hospitalizedCumulative ?? 'N/A'}
+          <li className="list-group-item ">
+            <i class="fas fa-skull-crossbones text-danger"></i> Total Deaths:{' '}
+            {death ?? 'N/A'}
           </li>
-          <li className="list-group-item">
-            ICU Count: {inIcuCurrently ?? 'N/A'}
+          <li className="list-group-item text-secondary">
+            <i class="fas fa-clinic-medical"></i> Total Hospitalized:{' '}
+            {hospitalizedCumulative ?? 'N/A'}
           </li>
-          <li className="list-group-item">
-            Currently on Ventilator: {onVentilatorCurrently ?? 'N/A'}
+          <li className="list-group-item text-secondary">
+            <i class="fas fa-procedures"></i> ICU Count:{' '}
+            {inIcuCurrently ?? 'N/A'}
+          </li>
+          <li className="list-group-item text-secondary">
+            <i class="fas fa-lungs-virus"></i> Currently on Ventilator:{' '}
+            {onVentilatorCurrently ?? 'N/A'}
           </li>
         </ul>
       </div>

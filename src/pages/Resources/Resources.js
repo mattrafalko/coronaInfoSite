@@ -9,7 +9,7 @@ export default function Resources() {
           <p class="lead">Resources to help you through the pandemic.</p>
         </div>
       </div>
-      <div class="card mt-4 mb-2">
+      <div class="card mt-4 mb-2 shadow">
         <img src={Apple} class="card-img-top" alt="apple" />
         <div class="card-body">
           <h5 class="card-title">Apple's COVID-19 Screening Tool</h5>
@@ -58,7 +58,7 @@ export default function Resources() {
           </a>
         </div>
       </div>
-      <div class="card mt-4 mb-2">
+      <div class="card mt-4 mb-2 shadow">
         <img
           src="https://ivfminnesota.com/wp-content/uploads/2018/08/cdc-logo-2.jpg"
           class="card-img-top"

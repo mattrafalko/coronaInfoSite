@@ -7,7 +7,7 @@ import Error from '../../components/Error';
 export default function Home() {
   const [countryData, setCountryData] = useState([]);
   const [currentDate, setCurrentDate] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -36,8 +36,14 @@ export default function Home() {
         <Error errorData={error} />
       ) : (
         <React.Fragment>
-          <h6 className="text-secondary">Refreshed on {currentDate}</h6>
-          {loading ? <Spinner /> : countryCards}
+          {loading ? (
+            <Spinner />
+          ) : (
+            <React.Fragment>
+              <h6 className="text-secondary">Refreshed on {currentDate}</h6>
+              {countryCards}
+            </React.Fragment>
+          )}
         </React.Fragment>
       )}
     </div>

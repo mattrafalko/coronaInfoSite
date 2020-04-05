@@ -59,9 +59,18 @@ export default function CountryCard(props) {
         </div>
 
         <ul className="list-group list-group-flush">
-          <li className="list-group-item">Total Confirmed: {TotalConfirmed}</li>
-          <li className="list-group-item">Total Recovered: {TotalRecovered}</li>
-          <li className="list-group-item">Total Deaths: {TotalDeaths}</li>
+          <li className="list-group-item">
+            <i class="fas fa-viruses text-warning"></i> Total Confirmed:{' '}
+            {TotalConfirmed}
+          </li>
+          <li className="list-group-item">
+            <i class="fas fa-virus-slash text-success"></i> Total Recovered:{' '}
+            {TotalRecovered}
+          </li>
+          <li className="list-group-item">
+            <i class="fas fa-skull-crossbones text-danger"></i> Total Deaths:{' '}
+            {TotalDeaths}
+          </li>
         </ul>
       </div>
     </div>

@@ -21,7 +21,7 @@ export default function Navbar() {
             aria-label="Toggle navigation"
           >
             <span className="text-white font-weight-light">
-              Menu <i className="fas fa-viruses text-white"></i>
+              Menu <i className="fas fa-virus text-white"></i>
             </span>
           </button>
 
