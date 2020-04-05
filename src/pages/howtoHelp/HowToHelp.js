@@ -38,6 +38,8 @@ export default function HowToHelp() {
         </div>
       </div>
 
+      <h3 className="mt-4">Movements</h3>
+
       <div class="card mt-4 mb-2">
         <img
           src="https://cms-assets.berniesanders.com/media/images/flag.width-600.jpg"

@@ -54,7 +54,7 @@ export default function Resources() {
             class="btn btn-danger"
             target="_blank"
           >
-            USA.gov Unemployment Wesbite
+            USA.gov Unemployment Website
           </a>
         </div>
       </div>
@@ -73,7 +73,7 @@ export default function Resources() {
             class="btn btn-danger"
             target="_blank"
           >
-            CDC's Wesbite
+            CDC's Website
           </a>
         </div>
       </div>
