@@ -12,6 +12,10 @@ export default function HowToHelp() {
           Everyone can help in some way. Check out the links below to see how
           you can help fight COVID-19.
         </p>
+        <p>
+          Local businesses are in need of help. Keep them in mind when wanting
+          to make charitable donations.
+        </p>
       </div>
 
       <h3 className="mt-4">Charities</h3>
