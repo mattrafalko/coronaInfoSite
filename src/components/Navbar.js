@@ -3,7 +3,7 @@ import React from 'react';
 export default function Navbar() {
   return (
     <React.Fragment>
-      <nav className="navbar navbar-light bg-danger fixed-top">
+      <nav className="navbar navbar-light bg-danger fixed-top shadow-sm">
         <div className="mx-auto container" style={{ 'max-width': '50em' }}>
           <a
             className="navbar-brand text-white font-weight-bold text-monospace"
@@ -12,7 +12,7 @@ export default function Navbar() {
             <h6>COVID-19 Resource Center</h6>
           </a>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler border-white"
             type="button"
             data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -20,8 +20,8 @@ export default function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span>
-              <i className="fas fa-viruses text-white"></i>
+            <span className="text-white font-weight-light">
+              Menu <i className="fas fa-viruses text-white"></i>
             </span>
           </button>
 
@@ -50,6 +50,11 @@ export default function Navbar() {
               <li className="nav-item">
                 <a className="nav-link text-white" href="/resources">
                   Resources
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link text-white" href="/about">
+                  About
                 </a>
               </li>
             </ul>

@@ -4,6 +4,7 @@ import Countries from './pages/Countries/Countries';
 import Resources from './pages/Resources/Resources';
 import HowToHelp from './pages/howtoHelp/HowToHelp';
 import States from './pages/States/States';
+import About from './pages/About/About';
 import Home from './pages/Home/Home';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/states" exact component={States} />
           <Route path="/resources" exact component={Resources} />
           <Route path="/howtohelp" exact component={HowToHelp} />
+          <Route path="/about" exact component={About} />
         </Router>
       </div>
     </div>

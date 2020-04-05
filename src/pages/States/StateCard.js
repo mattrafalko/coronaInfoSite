@@ -18,7 +18,7 @@ export default function StateCard(props) {
   valueNowDeaths = isNaN(valueNowDeaths) ? 0 : valueNowDeaths;
 
   return (
-    <div className="card mt-4" id={`#${state}`}>
+    <div className="card mt-4 shadow" id={`#${state}`}>
       <div className="card-body">
         <h5 className="card-title">{state}</h5>
         <div class="progress">

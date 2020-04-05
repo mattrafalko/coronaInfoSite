@@ -2,9 +2,8 @@ import React from 'react';
 
 export default function Home() {
   return (
-    <div className="content jumbotron mt-4 ">
+    <div className="content jumbotron mt-4 shadow-lg">
       <h1 className="display-4">COVID-19 </h1>
-      <p className="lead">Easy Access to Statistics & Resrouces. </p>
       <hr className="my-4" />
       <p>
         COVID-19 is an infectious disease caused by severe acute respiratory
