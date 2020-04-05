@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <div
         className="container mx-auto"
-        style={{ 'max-width': '50em', 'margin-top': '4em' }}
+        style={{ 'max-width': '50em', 'margin-top': '3em' }}
       >
         <Router>
           <Route path="/" exact component={Home} />

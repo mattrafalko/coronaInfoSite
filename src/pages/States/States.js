@@ -8,6 +8,8 @@ export default function States() {
   const [stateData, setStateData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [currentDate, setCurrentDate] = useState('');
+
   let numOrZero = (n) => (isNaN(n) ? 0 : n);
 
   useEffect(() => {
@@ -16,6 +18,8 @@ export default function States() {
       .get('https://covidtracking.com/api/states')
       .then((res) => {
         setStateData(res.data);
+        let date = new Date(res.data[0].dateModified).toString();
+        setCurrentDate(date);
         setLoading(false);
       })
       .catch((e) => setError(e.response));
@@ -41,6 +45,7 @@ export default function States() {
 
   let statesPageItems = (
     <React.Fragment>
+      <h6 className="text-secondary">Refreshed on {currentDate}</h6>
       <div class="dropdown">
         <a
           class="btn btn-danger dropdown-toggle"
