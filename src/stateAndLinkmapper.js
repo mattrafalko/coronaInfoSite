@@ -38,7 +38,7 @@ const stateNameAndLinks = [
   {
     state: 'ct',
     data: {
-      stateName: 'Conneticut',
+      stateName: 'Connecticut',
       stateLink: 'https://portal.ct.gov/Coronavirus',
     },
   },
@@ -52,7 +52,7 @@ const stateNameAndLinks = [
   {
     state: 'de',
     data: {
-      stateName: 'Deleware',
+      stateName: 'Delaware',
       stateLink: 'http://coronavirus.delaware.gov/',
     },
   },
@@ -165,7 +165,7 @@ const stateNameAndLinks = [
   {
     state: 'mo',
     data: {
-      stateName: 'Misouri',
+      stateName: 'Missouri',
       stateLink:
         'https://health.mo.gov/living/healthcondiseases/communicable/novel-coronavirus/',
     },
@@ -184,7 +184,7 @@ const stateNameAndLinks = [
   {
     state: 'nc',
     data: {
-      stateName: 'Carolina',
+      stateName: 'North Carolina',
       stateLink: 'https://www.ncdhhs.gov/divisions/public-health/covid19',
     },
   },
@@ -304,6 +304,13 @@ const stateNameAndLinks = [
     data: {
       stateName: 'Washington',
       stateLink: 'https://www.coronavirus.wa.gov/',
+    },
+  },
+  {
+    state: 'wy',
+    data: {
+      stateName: 'Wyoming',
+      stateLink: 'https://health.wyo.gov/',
     },
   },
   {
