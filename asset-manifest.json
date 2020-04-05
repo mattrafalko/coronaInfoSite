@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/coronaInfoSite/static/css/main.fa1a7c8f.chunk.css",
+    "main.js": "/coronaInfoSite/static/js/main.2148d4bb.chunk.js",
+    "main.js.map": "/coronaInfoSite/static/js/main.2148d4bb.chunk.js.map",
+    "runtime-main.js": "/coronaInfoSite/static/js/runtime-main.6bbc0cac.js",
+    "runtime-main.js.map": "/coronaInfoSite/static/js/runtime-main.6bbc0cac.js.map",
+    "static/js/2.68120f88.chunk.js": "/coronaInfoSite/static/js/2.68120f88.chunk.js",
+    "static/js/2.68120f88.chunk.js.map": "/coronaInfoSite/static/js/2.68120f88.chunk.js.map",
+    "index.html": "/coronaInfoSite/index.html",
+    "precache-manifest.c96dd9b4fa926e635febe16913b18db1.js": "/coronaInfoSite/precache-manifest.c96dd9b4fa926e635febe16913b18db1.js",
+    "service-worker.js": "/coronaInfoSite/service-worker.js",
+    "static/css/main.fa1a7c8f.chunk.css.map": "/coronaInfoSite/static/css/main.fa1a7c8f.chunk.css.map",
+    "static/js/2.68120f88.chunk.js.LICENSE.txt": "/coronaInfoSite/static/js/2.68120f88.chunk.js.LICENSE.txt",
+    "static/media/appleCovid.jpeg": "/coronaInfoSite/static/media/appleCovid.c3382ee3.jpeg",
+    "static/media/errorman.jpg": "/coronaInfoSite/static/media/errorman.247d37f0.jpg",
+    "static/media/statue.jpg": "/coronaInfoSite/static/media/statue.0137d1d1.jpg",
+    "static/media/ywca.png": "/coronaInfoSite/static/media/ywca.84916586.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6bbc0cac.js",
+    "static/js/2.68120f88.chunk.js",
+    "static/css/main.fa1a7c8f.chunk.css",
+    "static/js/main.2148d4bb.chunk.js"
+  ]
+}
