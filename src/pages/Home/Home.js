@@ -1,5 +1,4 @@
 import React from 'react';
-import statue from '../../assets/statue.jpg';
 
 export default function Home() {
   return (

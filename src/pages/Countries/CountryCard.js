@@ -1,13 +1,15 @@
 import React from 'react';
 
 export default function CountryCard(props) {
-  const {
-    TotalConfirmed,
-    TotalDeaths,
-    TotalRecovered,
-    Country,
-    CountrySlug,
-  } = props.country;
+  const { TotalConfirmed, TotalDeaths, Country } = props.country;
+
+  let { TotalRecovered } = props.country;
+
+  if (Country === 'United States of America') {
+    if (localStorage.getItem('usTotalRecovered')) {
+      TotalRecovered = localStorage.getItem('usTotalRecovered');
+    }
+  }
 
   let valueNowRecovered = Math.floor((TotalRecovered / TotalConfirmed) * 100);
   valueNowRecovered = isNaN(valueNowRecovered) ? 0 : valueNowRecovered;

@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Countries from './pages/Countries/Countries';
 import Resources from './pages/Resources/Resources';
 import HowToHelp from './pages/howtoHelp/HowToHelp';
 import States from './pages/States/States';
 import Home from './pages/Home/Home';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="">
+    <div>
       <Navbar />
       <div
         className="container mx-auto"

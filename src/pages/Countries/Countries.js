@@ -16,7 +16,6 @@ export default function Home() {
         headers: { 'Access-Control-Allow-Origin': '*' },
       })
       .then((res) => {
-        console.log(res.data);
         setCountryData([...res.data.Countries]);
         let date = new Date(res.data.Date).toString();
         setCurrentDate(date);

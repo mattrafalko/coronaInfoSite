@@ -9,12 +9,15 @@ export default function States() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  let numOrZero = (n) => (isNaN(n) ? 0 : n);
+
   useEffect(() => {
     setLoading(true);
     axios
       .get('https://covidtracking.com/api/states')
       .then((res) => {
         setStateData(res.data);
+
         setLoading(false);
       })
       .catch((e) => setError(e.response));
@@ -23,6 +26,16 @@ export default function States() {
   const stateCards = stateData
     .sort((a, b) => b.totalTestResults - a.totalTestResults)
     .map((item, i) => <StateCard state={item} key={i} />);
+
+  const updateUsTotalRecovered = () => {
+    let newUsTotalRecovered = stateData.reduce(
+      (a, b) => a + numOrZero(b.recovered),
+      0
+    );
+    localStorage.setItem('usTotalRecovered', newUsTotalRecovered);
+  };
+
+  updateUsTotalRecovered();
 
   return (
     <div>
