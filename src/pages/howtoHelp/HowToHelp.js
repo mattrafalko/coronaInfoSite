@@ -1,8 +1,42 @@
 import React from 'react';
-
-import YWCA from '../../assets/ywca.png';
+import howToHelpInfo from './HowToHelpInfo';
+import movementsInfo from './MovementsInfo';
 
 export default function HowToHelp() {
+  const howToHelpCards = howToHelpInfo.map((item) => (
+    <div class="card mt-4 shadow">
+      <img
+        src={item.src}
+        class="card-img-top"
+        alt={`${item.title}_${item.alt}`}
+      />
+      <div class="card-body">
+        <h5 class="card-title">{item.title}</h5>
+        <p class="card-text">{item.desc}</p>
+        <a href={item.link} class="btn btn-danger" target="_blank">
+          {`${item.btnText} ${item.title}`}
+        </a>
+      </div>
+    </div>
+  ));
+
+  const movementCards = movementsInfo.map((item) => (
+    <div class="card mt-4 shadow">
+      <img
+        src={item.src}
+        class="card-img-top"
+        alt={`${item.title}_${item.alt}`}
+      />
+      <div class="card-body">
+        <h5 class="card-title">{item.title}</h5>
+        <p class="card-text">{item.desc}</p>
+        <a href={item.link} class="btn btn-danger" target="_blank">
+          {`${item.btnText} ${item.title}`}
+        </a>
+      </div>
+    </div>
+  ));
+
   return (
     <React.Fragment>
       <div class="jumbotron shadow-lg">
@@ -19,82 +53,9 @@ export default function HowToHelp() {
       </div>
 
       <h3 className="mt-4">Charities</h3>
-
-      <div class="card mt-4 shadow">
-        <img src={YWCA} class="card-img-top" alt="YWCA banner" />
-        <div class="card-body">
-          <h5 class="card-title">YWCA</h5>
-          <p class="card-text">
-            "YWCAs are on the frontlines serving more than 1,200 communities,
-            providing services and resources for many of the most vulnerable
-            children, women, and their families – this includes those
-            experiencing domestic violence and/or homelessness, those facing job
-            cut-backs, low wages, and housing loss, and those impacted by
-            emergency school closures who lack affordable childcare options."
-          </p>
-          <a
-            href="https://www.ywca.org/ywca-usa-covid-19-emergency-response-message/"
-            class="btn btn-danger"
-            target="_blank"
-          >
-            Donate to YWCA
-          </a>
-        </div>
-      </div>
-
-      <div class="card mt-4 shadow">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/United_Way_Logo.svg/1200px-United_Way_Logo.svg.png"
-          class="card-img-top"
-          alt="unitedway banner"
-        />
-        <div class="card-body">
-          <h5 class="card-title">United Way</h5>
-          <p class="card-text">
-            "United Way Worldwide's COVID-19 Community Response and Recovery
-            Fund supports communities by helping local United Ways respond, and
-            bolstering 211, the go-to information resource in times of crisis.
-            Calls to 211 for help with basics have risen more than 300% in some
-            areas, and are expected to top 27 million calls over the next six
-            months. That's more than twice the usual call volume that 211 fields
-            in a typical year. "
-          </p>
-          <a
-            href="https://www.unitedway.org/recovery/covid19?utm_source=direct&utm_medium=web&utm_campaign=covid19&utm_content=learnmore#"
-            class="btn btn-danger"
-            target="_blank"
-          >
-            Donate to United Way
-          </a>
-        </div>
-      </div>
+      {howToHelpCards}
       <h3 className="mt-4">Movements</h3>
-
-      <div class="card mt-4 mb-2 shadow">
-        <img
-          src="https://cms-assets.berniesanders.com/media/images/flag.width-600.jpg"
-          class="card-img-top"
-          alt="bernie banner"
-        />
-        <div class="card-body">
-          <h5 class="card-title">Bernie Sanders Campaign</h5>
-          <p class="card-text">
-            "In terms of potential deaths and the impact on our economy, the
-            crisis we face from coronavirus is on the scale of a major war, and
-            we must act accordingly. We must begin thinking on a scale
-            comparable to the threat, and make sure that we are protecting
-            working people, low-income people, and the most vulnerable
-            communities, not just giant corporations and Wall Street."
-          </p>
-          <a
-            href="https://berniesanders.com/issues/emergency-response-coronavirus-pandemic/"
-            class="btn btn-danger"
-            target="_blank"
-          >
-            Donate to Bernie's COVID-19 campaign
-          </a>
-        </div>
-      </div>
+      {movementCards}
     </React.Fragment>
   );
 }
