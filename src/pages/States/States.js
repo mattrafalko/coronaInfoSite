@@ -54,7 +54,11 @@ export default function States() {
           Select a State
         </a>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <div
+          class="dropdown-menu overflow-auto"
+          style={{ maxHeight: '15em', maxWidth: '20em' }}
+          aria-labelledby="dropdownMenuLink"
+        >
           {stateDropDownList}
         </div>
       </div>

@@ -52,8 +52,8 @@ export default function Home() {
         </a>
 
         <div
-          class="dropdown-menu"
-          style={{ marginTop: '5em' }}
+          class="dropdown-menu overflow-auto"
+          style={{ maxHeight: '15em', maxWidth: '20em' }}
           aria-labelledby="dropdownMenuLink"
         >
           {countriesDropDownList}
