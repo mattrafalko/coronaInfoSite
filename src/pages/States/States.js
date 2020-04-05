@@ -33,14 +33,45 @@ export default function States() {
     localStorage.setItem('usTotalRecovered', newUsTotalRecovered);
   };
 
+  const stateDropDownList = stateData.map((state) => (
+    <a class="dropdown-item" href={`#${state.state}`}>
+      {state.state}
+    </a>
+  ));
+
+  let statesPageItems = (
+    <React.Fragment>
+      <div class="dropdown">
+        <a
+          class="btn btn-danger dropdown-toggle"
+          href="#"
+          role="button"
+          id="dropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Select a State
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          {stateDropDownList}
+        </div>
+      </div>
+      <div>{stateCards}</div>
+    </React.Fragment>
+  );
+
   updateUsTotalRecovered();
 
   return (
-    <div>
+    <div className="mt-3">
       {error ? (
         <Error errorData={error} />
       ) : (
-        <React.Fragment>{loading ? <Spinner /> : stateCards}</React.Fragment>
+        <React.Fragment>
+          {loading ? <Spinner /> : statesPageItems}
+        </React.Fragment>
       )}
     </div>
   );

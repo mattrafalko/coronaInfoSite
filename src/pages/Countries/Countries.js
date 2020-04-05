@@ -30,6 +30,39 @@ export default function Home() {
     .sort((a, b) => b.TotalConfirmed - a.TotalConfirmed)
     .map((item, i) => <CountryCard country={item} key={i} />);
 
+  const countriesDropDownList = countryData.map((country) => (
+    <a class="dropdown-item" href={`#${country.Country}`}>
+      {country.Country}
+    </a>
+  ));
+
+  let countriesPageItems = (
+    <React.Fragment>
+      <div class="dropdown">
+        <a
+          class="btn btn-danger dropdown-toggle"
+          href="#"
+          role="button"
+          id="dropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Select a Country
+        </a>
+
+        <div
+          class="dropdown-menu"
+          style={{ marginTop: '5em' }}
+          aria-labelledby="dropdownMenuLink"
+        >
+          {countriesDropDownList}
+        </div>
+      </div>
+      <div>{countryCards}</div>
+    </React.Fragment>
+  );
+
   return (
     <div>
       {error ? (
@@ -41,7 +74,7 @@ export default function Home() {
           ) : (
             <React.Fragment>
               <h6 className="text-secondary">Refreshed on {currentDate}</h6>
-              {countryCards}
+              {countriesPageItems}
             </React.Fragment>
           )}
         </React.Fragment>
