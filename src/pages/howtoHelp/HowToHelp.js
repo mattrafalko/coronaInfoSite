@@ -42,6 +42,32 @@ export default function HowToHelp() {
         </div>
       </div>
 
+      <div class="card mt-4 shadow">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/United_Way_Logo.svg/1200px-United_Way_Logo.svg.png"
+          class="card-img-top"
+          alt="unitedway banner"
+        />
+        <div class="card-body">
+          <h5 class="card-title">United Way</h5>
+          <p class="card-text">
+            "United Way Worldwide's COVID-19 Community Response and Recovery
+            Fund supports communities by helping local United Ways respond, and
+            bolstering 211, the go-to information resource in times of crisis.
+            Calls to 211 for help with basics have risen more than 300% in some
+            areas, and are expected to top 27 million calls over the next six
+            months. That's more than twice the usual call volume that 211 fields
+            in a typical year. "
+          </p>
+          <a
+            href="https://www.unitedway.org/recovery/covid19?utm_source=direct&utm_medium=web&utm_campaign=covid19&utm_content=learnmore#"
+            class="btn btn-danger"
+            target="_blank"
+          >
+            Donate to United Way
+          </a>
+        </div>
+      </div>
       <h3 className="mt-4">Movements</h3>
 
       <div class="card mt-4 mb-2 shadow">
