@@ -6,7 +6,8 @@ import HowToHelp from './pages/howtoHelp/HowToHelp';
 import States from './pages/States/States';
 import About from './pages/About/About';
 import Home from './pages/Home/Home';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Reddit from './pages/Reddit/Reddit';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/resources" exact component={Resources} />
           <Route path="/howtohelp" exact component={HowToHelp} />
           <Route path="/about" exact component={About} />
+          <Route path="/news" exact component={Reddit} />
         </Router>
       </div>
     </div>

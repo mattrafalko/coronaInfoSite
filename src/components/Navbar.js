@@ -9,7 +9,7 @@ export default function Navbar() {
             className="navbar-brand text-white font-weight-bold text-monospace"
             href="/"
           >
-            <h6>COVID-19 Resource Center</h6>
+            <h6>COVID-19</h6>
           </a>
           <button
             className="navbar-toggler border-white"
@@ -50,6 +50,11 @@ export default function Navbar() {
               <li className="nav-item">
                 <a className="nav-link text-white" href="/resources">
                   Resources
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link text-white" href="/news">
+                  What People are Saying
                 </a>
               </li>
               <li className="nav-item">
