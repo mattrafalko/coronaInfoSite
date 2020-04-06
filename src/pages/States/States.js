@@ -19,8 +19,8 @@ export default function States() {
       .get('https://covidtracking.com/api/states')
       .then((res) => {
         setStateData(res.data);
-        let date = new Date(res.data[0].dateModified).toString();
-        setCurrentDate(date);
+        //let date = new Date(res.data[0].dateModified).toString();
+        setCurrentDate(res.data[0].dateModified);
         setLoading(false);
       })
       .catch((e) => setError(e.response));
@@ -48,7 +48,11 @@ export default function States() {
     <React.Fragment>
       <h6 className="text-secondary">
         Refreshed on{' '}
-        {<Moment local={currentDate} format={'MM/DD/YYYY hh:mm:ss A'} />}
+        {
+          <Moment format={'MM/DD/YYYY hh:mm:ss A'} local>
+            {currentDate}
+          </Moment>
+        }
       </h6>
       <div class="dropdown">
         <a

@@ -17,8 +17,8 @@ export default function Home() {
       })
       .then((res) => {
         setCountryData([...res.data.Countries]);
-        let date = new Date(res.data.Date).toString();
-        setCurrentDate(date);
+        //let date = new Date(res.data.Date).toString();
+        setCurrentDate(res.data.Date);
         setLoading(false);
       })
       .catch((e) => {
@@ -76,10 +76,9 @@ export default function Home() {
               <h6 className="text-secondary">
                 Refreshed on{' '}
                 {
-                  <Moment
-                    local={currentDate}
-                    format={'MM/DD/YYYY hh:mm:ss A'}
-                  />
+                  <Moment format={'MM/DD/YYYY hh:mm:ss A'} local>
+                    {currentDate}
+                  </Moment>
                 }
               </h6>
               {countriesPageItems}

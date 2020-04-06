@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Moment from 'react-moment';
 import 'moment-timezone';
+import Banner from '../../assets/covidbanner.jpg';
 
 export default function Reddit() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     axios
-      .get('https://www.reddit.com/r/Coronavirus.json?raw_json=1')
+      .get('https://www.reddit.com/r/Coronavirus/top.json?raw_json=1')
       .then((res) => {
         setPosts(res.data.data.children);
       })
@@ -24,35 +25,27 @@ export default function Reddit() {
       try {
         img = post.data.preview.images[0].resolutions[4].url;
       } catch (e) {}
-      //let date = new Date(post.data.created_utc).toString();
-      return (
-        <div className="card mb-3" style={{ 'max-width': '540px' }} key={i}>
-          <div className="row no-gutters">
-            <div className="col-md-4">
-              {img ? <img src={img} className="card-img" alt="..." /> : <div />}
-            </div>
-            <div className="col-md-8">
-              <div className="card-body">
-                <h5 className="card-title">
-                  <a
-                    href={post.data.url}
-                    target="_blank"
-                    className="text-danger"
-                  >
-                    {post.data.title}
-                  </a>
-                </h5>
 
-                <p className="card-text">
-                  <small className="text-muted">
-                    <Moment
-                      local={post.data.created_utc}
-                      format={'MM/DD/YYYY hh:mm:ss A'}
-                    />
-                  </small>
-                </p>
-              </div>
-            </div>
+      return (
+        <div className="card mt-4 shadow">
+          <img
+            src={img ? img : Banner}
+            className="card-img-top"
+            alt={`${post.data.title}_banner`}
+          />
+
+          <div className="card-body">
+            <h5 className="card-title">
+              <a href={post.data.url} target="_blank" className="text-danger">
+                {' '}
+                {post.data.title}
+              </a>
+            </h5>
+            <span className="text-secondary">
+              <Moment format="MM/DD/YYYY hh:mm:ss A" unix>
+                {post.data.created}
+              </Moment>
+            </span>
           </div>
         </div>
       );
