@@ -9,10 +9,24 @@ export default function About() {
       <p>
         This website is still under construction. Please submit feedback and
         feature requests to:{' '}
-        <a href="mailto:mattrafalko@gmail.com?Subject=COVID-19%20Site">
+        <a
+          href="mailto:mattrafalko@gmail.com?Subject=COVID-19%20Site"
+          className="text-danger"
+        >
           {' '}
           mattrafalko@gmail.com
         </a>
+      </p>
+      <p>
+        Check out the code here on{' '}
+        <a
+          href="https://github.com/mattrafalko/coronaInfoSite"
+          target="_blank"
+          className="text-danger"
+        >
+          github
+        </a>
+        .
       </p>
       <span>Data Sources:</span>
       <ul>
