@@ -30,11 +30,13 @@ export default function Home() {
     .sort((a, b) => b.TotalConfirmed - a.TotalConfirmed)
     .map((item, i) => <CountryCard country={item} key={i} />);
 
-  const countriesDropDownList = countryData.map((country) => (
-    <a class="dropdown-item" href={`#${country.Country}`}>
-      {country.Country}
-    </a>
-  ));
+  const countriesDropDownList = countryData
+    .sort((a, b) => a.Country.localeCompare(b.Country))
+    .map((country) => (
+      <a class="dropdown-item" href={`#${country.Country}`}>
+        {country.Country}
+      </a>
+    ));
 
   let countriesPageItems = (
     <React.Fragment>

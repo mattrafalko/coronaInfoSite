@@ -38,11 +38,13 @@ export default function States() {
     localStorage.setItem('usTotalRecovered', newUsTotalRecovered);
   };
 
-  const stateDropDownList = stateData.map((state) => (
-    <a class="dropdown-item" href={`#${state.state}`}>
-      {state.state}
-    </a>
-  ));
+  const stateDropDownList = stateData
+    .sort((a, b) => a.state.localeCompare(b.state))
+    .map((state) => (
+      <a class="dropdown-item" href={`#${state.state}`}>
+        {state.state}
+      </a>
+    ));
 
   let statesPageItems = (
     <React.Fragment>
