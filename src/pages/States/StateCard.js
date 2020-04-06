@@ -23,7 +23,7 @@ export default function StateCard(props) {
     stateLink = currentState[0].data.stateLink;
   }
 
-  let valueNowRecovered = Math.round(
+  let valueNowRecovered = Math.floor(
     (recovered / (positive - recovered)) * 100
   );
   valueNowRecovered = isNaN(valueNowRecovered) ? 0 : valueNowRecovered;
