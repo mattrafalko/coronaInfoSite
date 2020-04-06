@@ -27,7 +27,7 @@ export default function States() {
   }, []);
 
   const stateCards = stateData
-    .sort((a, b) => b.totalTestResults - a.totalTestResults)
+    .sort((a, b) => b.positive - a.positive)
     .map((item, i) => <StateCard state={item} key={i} />);
 
   const updateUsTotalRecovered = () => {

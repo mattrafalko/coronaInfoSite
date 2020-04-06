@@ -3,6 +3,7 @@ import stateNameAndLinks from '../../stateAndLinkmapper';
 
 export default function StateCard(props) {
   const {
+    positive,
     totalTestResults,
     death,
     recovered,
@@ -22,11 +23,16 @@ export default function StateCard(props) {
     stateLink = currentState[0].data.stateLink;
   }
 
-  let valueNowRecovered = Math.round((recovered / totalTestResults) * 100);
+  let valueNowRecovered = Math.round(
+    (recovered / (positive - recovered)) * 100
+  );
   valueNowRecovered = isNaN(valueNowRecovered) ? 0 : valueNowRecovered;
 
-  let valueNowDeaths = Math.floor((death / totalTestResults) * 100);
+  let valueNowDeaths = Math.floor((death / (positive - death)) * 100);
   valueNowDeaths = isNaN(valueNowDeaths) ? 0 : valueNowDeaths;
+
+  let valueTestedPositive = Math.floor((positive / totalTestResults) * 100);
+  valueTestedPositive = isNaN(valueTestedPositive) ? 0 : valueTestedPositive;
 
   return (
     <div className="card mt-4 shadow" id={`${state}`}>
@@ -38,43 +44,42 @@ export default function StateCard(props) {
         </h5>
         <div class="progress ">
           <div
-            className="progress-bar bg-success "
-            role="progressbar"
-            style={{
-              width: `${valueNowRecovered}%`,
-            }}
-            aria-valuenow={valueNowRecovered}
-            aria-valuemin="0"
-            aria-valuemax={totalTestResults}
-          ></div>
-          <div
             className="progress-bar bg-danger"
             role="progressbar"
             style={{
               width: `${valueNowDeaths}%`,
             }}
             aria-valuenow={valueNowDeaths}
-            aria-valuemin={valueNowRecovered}
-            aria-valuemax={totalTestResults}
+            aria-valuemin="0"
+            aria-valuemax={valueTestedPositive}
           ></div>
+          <div
+            className="progress-bar bg-success "
+            role="progressbar"
+            style={{
+              width: `${valueNowRecovered}%`,
+            }}
+            aria-valuenow={valueNowRecovered}
+            aria-valuemin={valueNowDeaths}
+            aria-valuemax={valueTestedPositive}
+          ></div>
+
           <div
             className="progress-bar bg-warning"
             role="progressbar"
             style={{
               width: '100%',
             }}
-            aria-valuenow={Math.floor(
-              ((totalTestResults - death - recovered) / totalTestResults) * 100
-            )}
+            aria-valuenow={valueTestedPositive}
             aria-valuemin="0"
-            aria-valuemax={totalTestResults}
+            aria-valuemax={valueTestedPositive}
           ></div>
         </div>
 
         <ul className="list-group list-group-flush">
           <li className="list-group-item">
             <i class="fas fa-viruses text-warning"></i> Total Confirmed:{' '}
-            {totalTestResults}
+            {positive}
           </li>
           <li className="list-group-item">
             <i class="fas fa-virus-slash text-success"></i> Total Recovered:{' '}
@@ -84,6 +89,10 @@ export default function StateCard(props) {
           <li className="list-group-item ">
             <i class="fas fa-skull-crossbones text-danger"></i> Total Deaths:{' '}
             {death ?? 'N/A'}
+          </li>
+          <li className="list-group-item text-secondary">
+            <i class="fas fa-vial"></i> Total Tested:{' '}
+            {totalTestResults ?? 'N/A'}
           </li>
           <li className="list-group-item text-secondary">
             <i class="fas fa-clinic-medical"></i> Total Hospitalized:{' '}
