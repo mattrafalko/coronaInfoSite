@@ -23,15 +23,15 @@ export default function StateCard(props) {
     stateLink = currentState[0].data.stateLink;
   }
 
-  let valueNowRecovered = Math.floor(
+  let valueNowRecovered = Math.round(
     (recovered / (positive - recovered)) * 100
   );
   valueNowRecovered = isNaN(valueNowRecovered) ? 0 : valueNowRecovered;
 
-  let valueNowDeaths = Math.floor((death / (positive - death)) * 100);
+  let valueNowDeaths = Math.round((death / (positive - death)) * 100);
   valueNowDeaths = isNaN(valueNowDeaths) ? 0 : valueNowDeaths;
 
-  let valueTestedPositive = Math.floor((positive / totalTestResults) * 100);
+  let valueTestedPositive = Math.round((positive / totalTestResults) * 100);
   valueTestedPositive = isNaN(valueTestedPositive) ? 0 : valueTestedPositive;
 
   return (

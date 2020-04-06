@@ -11,10 +11,10 @@ export default function CountryCard(props) {
     }
   }
 
-  let valueNowRecovered = Math.floor((TotalRecovered / TotalConfirmed) * 100);
+  let valueNowRecovered = Math.round((TotalRecovered / TotalConfirmed) * 100);
   valueNowRecovered = isNaN(valueNowRecovered) ? 0 : valueNowRecovered;
 
-  let valueNowDeaths = Math.floor((TotalDeaths / TotalConfirmed) * 100);
+  let valueNowDeaths = Math.round((TotalDeaths / TotalConfirmed) * 100);
   valueNowDeaths = isNaN(valueNowDeaths) ? 0 : valueNowDeaths;
 
   return (
@@ -22,16 +22,6 @@ export default function CountryCard(props) {
       <div className="card-body">
         <h5 className="card-title">{Country}</h5>
         <div class="progress">
-          <div
-            className="progress-bar bg-success"
-            role="progressbar"
-            style={{
-              width: `${valueNowRecovered}%`,
-            }}
-            aria-valuenow={valueNowRecovered}
-            aria-valuemin="0"
-            aria-valuemax={TotalConfirmed}
-          ></div>
           <div
             className="progress-bar bg-danger"
             role="progressbar"
@@ -43,12 +33,22 @@ export default function CountryCard(props) {
             aria-valuemax={TotalConfirmed}
           ></div>
           <div
+            className="progress-bar bg-success"
+            role="progressbar"
+            style={{
+              width: `${valueNowRecovered}%`,
+            }}
+            aria-valuenow={valueNowRecovered}
+            aria-valuemin="0"
+            aria-valuemax={TotalConfirmed}
+          ></div>
+          <div
             className="progress-bar bg-warning"
             role="progressbar"
             style={{
               width: '100%',
             }}
-            aria-valuenow={Math.floor(
+            aria-valuenow={Math.round(
               ((TotalConfirmed - TotalDeaths - TotalRecovered) /
                 TotalConfirmed) *
                 100
