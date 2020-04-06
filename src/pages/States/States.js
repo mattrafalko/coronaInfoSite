@@ -3,6 +3,7 @@ import axios from 'axios';
 import StateCard from './StateCard';
 import Spinner from '../../components/Spinner';
 import Error from '../../components/Error';
+import Moment from 'react-moment';
 
 export default function States() {
   const [stateData, setStateData] = useState([]);
@@ -45,7 +46,10 @@ export default function States() {
 
   let statesPageItems = (
     <React.Fragment>
-      <h6 className="text-secondary">Refreshed on {currentDate}</h6>
+      <h6 className="text-secondary">
+        Refreshed on{' '}
+        {<Moment local={currentDate} format={'MM/DD/YYYY hh:mm:ss A'} />}
+      </h6>
       <div class="dropdown">
         <a
           class="btn btn-danger dropdown-toggle"

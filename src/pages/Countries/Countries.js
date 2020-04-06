@@ -3,7 +3,7 @@ import axios from 'axios';
 import CountryCard from './CountryCard';
 import Spinner from '../../components/Spinner';
 import Error from '../../components/Error';
-
+import Moment from 'react-moment';
 export default function Home() {
   const [countryData, setCountryData] = useState([]);
   const [currentDate, setCurrentDate] = useState('');
@@ -73,7 +73,15 @@ export default function Home() {
             <Spinner />
           ) : (
             <React.Fragment>
-              <h6 className="text-secondary">Refreshed on {currentDate}</h6>
+              <h6 className="text-secondary">
+                Refreshed on{' '}
+                {
+                  <Moment
+                    local={currentDate}
+                    format={'MM/DD/YYYY hh:mm:ss A'}
+                  />
+                }
+              </h6>
               {countriesPageItems}
             </React.Fragment>
           )}
